@@ -1,0 +1,41 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: url('/img/super wings.jpg');
+    background-size: cover;
+    background-position: cover;
+    background-repeat: no-repeat;
+}
+.menu a {
+    color: white;
+}
+
+.menu {
+    background-color: #708090;
+    text-align: center;
+}
+
+#rodape{ 
+    text-align: center;
+}
+
+.dados{
+    
+    text-align: center;
+    font-weight: bold;
+    color: white;
+    background-color: #708090;
+    
+}
+
+h1 {
+    text-align: center;
+    font-weight: bold;
+}
+
+.txt
+{
+    text-align: center;
+    font-weight: bold;
+    color: rgb(5, 5, 5);
+    
+}

@@ -1,0 +1,73 @@
+ @model avds.Models.Contatos
+
+@{
+    ViewData["Title"] = "Contatos";
+}
+
+<h1>Contatos</h1>
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="CreateContato">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Nome" class="control-label"></label>
+                <input asp-for="Nome" class="form-control" />
+                <span asp-validation-for="Nome" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Msg" class="control-label"></label>
+                <input asp-for="Msg" class="form-control" />
+                <span asp-validation-for="Msg" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+
+<table class="table bg-white">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Msg)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in ViewBag.contatos) {
+        <tr>
+            <td>
+                @item.Nome
+            </td>
+            <td>
+                @item.Email
+            </td>
+            <td>
+                @item.Msg
+            </td>
+            <td>
+                <a asp-controller="Contato" asp-action="Edit" asp-route-id="@item.IdContatos">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.IdContatos">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.IdContatos">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+
+    <footer id="rodape">&copy; AV Diogo S</footer>
